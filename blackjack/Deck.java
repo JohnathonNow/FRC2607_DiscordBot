@@ -25,7 +25,7 @@ public class Deck {
   public void reset() {
     this.cards.clear();
     int i = 0;
-    while (i < this.count) {
+    while (i < this.count * 4) {
       i = i + 1;
       int card = 2;
       while (card <= Card.ACE) {
