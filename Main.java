@@ -14,7 +14,7 @@ public class Main extends ListenerAdapter {
         // optionally block until JDA is ready
         jda.awaitReady();
     }
-
+//hello
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         event.getMessage().addReaction("U+1F620").queue();
