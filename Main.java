@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Main extends ListenerAdapter {
     public static JDA jda;
+    //different now
     public static void main(String[] args) throws LoginException, InterruptedException {
         jda = JDABuilder.createDefault("TOKEN").addEventListeners(new Main()).build();
         // optionally block until JDA is ready
