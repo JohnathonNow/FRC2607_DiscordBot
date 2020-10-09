@@ -1,4 +1,4 @@
-package frontend.FRC;
+package handlers.FRC;
 
 public class Match {
     private final int[] blueAlliance;

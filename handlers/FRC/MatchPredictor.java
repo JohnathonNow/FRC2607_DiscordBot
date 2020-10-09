@@ -1,9 +1,9 @@
-package frontend.FRC;
+package handlers.FRC;
 
-import frontend.Frontend;
+import handlers.Handler;
 import util.Message;
 
-public class MatchPredictor implements Frontend {
+public class MatchPredictor implements Handler {
     private ScoutingData data;
     public MatchPredictor() {
         this.data = new ScoutingData();

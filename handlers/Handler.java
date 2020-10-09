@@ -1,7 +1,7 @@
-package frontend;
+package handlers;
 
 import util.Message;
 
-public interface Frontend {
+public interface Handler {
     public void handleMessage(Message m);
 }

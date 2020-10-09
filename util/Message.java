@@ -1,13 +1,13 @@
 package util;
 
-import backend.Backend;
+import transport.Transport;
 
 public class Message {
-    private final Backend replyChannel;
+    private final Transport replyChannel;
     private final String sender;
     private final String text;
 
-    public Message(Backend replyChannel, String sender, String text) {
+    public Message(Transport replyChannel, String sender, String text) {
         this.replyChannel = replyChannel;
         this.sender = sender;
         this.text = text;

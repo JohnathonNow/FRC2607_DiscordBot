@@ -1,4 +1,4 @@
-package frontend.FRC;
+package handlers.FRC;
 
 public class Prediction {
     private final int red_wins;

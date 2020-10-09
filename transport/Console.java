@@ -1,10 +1,10 @@
-package backend;
+package transport;
 
 import java.util.Scanner;
 
 import util.Message;
 
-public class Console implements Backend {
+public class Console implements Transport {
     private final Scanner scan;
 
     public Console() {

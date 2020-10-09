@@ -1,18 +1,18 @@
-import backend.Backend;
-import backend.Console;
-import frontend.Frontend;
-import frontend.FRC.MatchPredictor;
+import handlers.Handler;
+import handlers.FRC.MatchPredictor;
+import transport.Console;
+import transport.Transport;
 import util.Message;
 
 public class Main {
     public static void main(String[] args) {
-        Frontend[] handlers = new Frontend[] {
+        Handler[] handlers = new Handler[] {
             new MatchPredictor()
         };
-        Backend b = new Console();
+        Transport b = new Console();
         while (true) {
             Message m = b.receive();
-            for (Frontend f : handlers) {
+            for (Handler f : handlers) {
                 f.handleMessage(m);
             }
         }

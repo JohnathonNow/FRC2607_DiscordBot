@@ -1,4 +1,4 @@
-package frontend.FRC;
+package handlers.FRC;
 
 public enum Result {
     RED_WIN,
