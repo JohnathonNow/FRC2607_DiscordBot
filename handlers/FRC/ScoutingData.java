@@ -6,6 +6,7 @@ public class ScoutingData {
     public HashMap<Integer, TeamData> data;
     public ScoutingData() {
         this.data = new HashMap<>();
+        this.data.put(2607, new TeamData(5));
         // TODO: Read in data
     }
 
@@ -14,7 +15,7 @@ public class ScoutingData {
     }
 
     public boolean isPlayingDefense(int team) {
-        int count = this.data.get(team).matchesPlayedDefence;
+        int count = data.get(team).getMatchesPlayedDefence();
         throw new UnsupportedOperationException("NOT IMPLEMENTED");
     }
 
