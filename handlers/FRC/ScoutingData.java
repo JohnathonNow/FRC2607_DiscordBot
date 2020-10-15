@@ -1,8 +1,11 @@
 package handlers.FRC;
 
-public class ScoutingData {
+import java.util.HashMap;
 
+public class ScoutingData {
+    public HashMap<Integer, TeamData> data;
     public ScoutingData() {
+        this.data = new HashMap<>();
         // TODO: Read in data
     }
 
@@ -11,6 +14,7 @@ public class ScoutingData {
     }
 
     public boolean isPlayingDefense(int team) {
+        int count = this.data.get(team).matchesPlayedDefence;
         throw new UnsupportedOperationException("NOT IMPLEMENTED");
     }
 
