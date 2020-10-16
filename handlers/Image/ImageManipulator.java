@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
+
+import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
 import handlers.Handler;
@@ -23,9 +25,9 @@ public class ImageManipulator implements Handler {
             int height = scanner.nextInt();
             cropImage(name, x, y, width, height);
             m.reply(new Message(null, "image", "cropped"));
-        } else if (m.getText().startswith("!imgcaption")) {
+        } else if (m.getText().startsWith("!imgcaption")) {
             Scanner scanner = new Scanner(m.getText());
-            Scanner.next();
+            scanner.next();
             String name = scanner.next();
             String top_text = scanner.next();
             String bottom_text = scanner.next();
@@ -38,6 +40,7 @@ public class ImageManipulator implements Handler {
         try {
             BufferedImage src = (BufferedImage) ImageIO.read(new File(name));
             Graphics g = src.createGraphics();
+            g.setColor(Color.BLACK);
             g.drawString(top_text, src.getWidth() / 10, src.getHeight() / 10);
             g.drawString(bottom_text, src.getWidth() / 10, src.getHeight() * 9 / 10);
             ImageIO.write(src, "png", new File(name));
