@@ -1,12 +1,10 @@
 package handlers.Image;
-
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
-
 import javax.imageio.ImageIO;
-
+import java.awt.Graphics;
+import java.io.IOException;
 import handlers.Handler;
 import util.Message;
 
@@ -25,8 +23,23 @@ public class ImageManipulator implements Handler {
             cropImage(name, x, y, width, height);
             m.reply(new Message(null, "image", "cropped"));
         }
+        else if (m.getText().startswith("!imgcaption")){
+            Scanner scanner = new Scanner(m.getText());
+            Scanner.next();
+            String name = scanner.next();
+            String top_text = scanner.next();
+            String bottom_text = scanner.next();
+            captionImage(name, top_text, bottom_text);
+            m.reply(new Message(null, "image", "captioned"));
+        }
     }
-
+    public void captionImage(String name, String top_text, String bottom_text) {
+        BufferedImage src = (BufferedImage)ImageIO.read(new File(name));
+        Graphics g = src.createGraphics();
+        g.drawString(top_text, src.getWidth()/10, src.getHeight()/10);
+        g.drawString(bottom_text, src.getWidth()/10, src.getHeight()*9/10);
+        ImageIO.write(src, "png", new File(name));
+    }
     public void cropImage(String name, int x, int y, int width, int height) {
         try {
             BufferedImage src = (BufferedImage) ImageIO.read(new File(name));
@@ -37,5 +50,4 @@ public class ImageManipulator implements Handler {
             e.printStackTrace();
         }
     }
-
 }
