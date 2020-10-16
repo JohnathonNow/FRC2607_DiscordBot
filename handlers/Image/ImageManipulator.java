@@ -2,6 +2,7 @@ package handlers.Image;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
@@ -13,7 +14,6 @@ public class ImageManipulator implements Handler {
 
     @Override
     public void handleMessage(Message m) {
-        // TODO Auto-generated method stub
         if (m.getText().startsWith("!imgcrop")) {
             Scanner scanner = new Scanner(m.getText());
             scanner.next();
@@ -28,9 +28,14 @@ public class ImageManipulator implements Handler {
     }
 
     public void cropImage(String name, int x, int y, int width, int height) {
-        BufferedImage src = (BufferedImage)ImageIO.read(new File(name));
-        BufferedImage dest = src.getSubimage(x, y, width, height);
-        ImageIO.write(dest, "png", new File(name));
+        try {
+            BufferedImage src = (BufferedImage) ImageIO.read(new File(name));
+            BufferedImage dest = src.getSubimage(x, y, width, height);
+            ImageIO.write(dest, "png", new File(name));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
-    
+
 }
