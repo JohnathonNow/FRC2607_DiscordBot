@@ -11,8 +11,9 @@ public class MatchPredictor implements Handler {
 
     @Override
     public void handleMessage(Message m) {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED");
-        
+        if (m.getText().startsWith("!testdefense")) {
+            System.out.println("2607 played defense? " + this.data.isPlayingDefense(2607));
+        }
     }
 
     public Result simulateOne(Match m) {
