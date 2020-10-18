@@ -39,6 +39,17 @@ public class MatchPredictor implements Handler {
     }
 
     public Prediction simulateMany(Match m) {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED");
+        int i = 0, blue = 0, red = 0, tie = 0;
+        while(i<100){
+            if(simulateOne(m) == Result.BLUE_WIN){
+                blue++;
+            } else if (simulateOne(m)==Result.RED_WIN){
+                red++;
+            } else {
+                tie++;
+            }
+            i++;
+        }
+        return new Prediction(red, blue, tie);
     }
 }
