@@ -21,6 +21,10 @@ public class Message {
         return text;
     }
 
+    public void reply(String body) {
+        this.replyChannel.send(new Message(this.replyChannel, this.sender, body));
+    }
+
     public void reply(Message m) {
         this.replyChannel.send(m);
     }
