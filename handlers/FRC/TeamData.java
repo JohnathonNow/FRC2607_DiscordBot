@@ -1,13 +1,26 @@
 package handlers.FRC;
 
+import java.util.ArrayList;
+
 public class TeamData {
-    public final int matchesPlayedDefence;
+    public final ArrayList<MatchData> matches;
+    public final int teamNumber;
 
-    public TeamData(int matchesPlayedDefence) {
-        this.matchesPlayedDefence = matchesPlayedDefence;
+    public ArrayList<MatchData> getMatches() {
+        return matches;
     }
 
-    public int getMatchesPlayedDefence() {
-        return matchesPlayedDefence;
+    public int getTeamNumber() {
+        return teamNumber;
     }
+
+    public TeamData(int teamNumber) {
+        this.matches = new ArrayList<>();
+        this.teamNumber = teamNumber;
+    }
+    
+    public void playMatch(MatchData m) {
+        this.matches.add(m);
+    }
+    
 }
