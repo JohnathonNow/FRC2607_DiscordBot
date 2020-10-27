@@ -1,1 +1,3 @@
-Team No, Match No, 
+ Team No, Match No, Inner, Outer
+ 2607, 1, 2, 4
+ 474, 2, 3, 4

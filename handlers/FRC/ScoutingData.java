@@ -12,13 +12,15 @@ public class ScoutingData {
     private static Random r = new Random();
     private Scanner scan;
     public ScoutingData() {
-        System.out.println("hi");
         try{
             scan = new Scanner(new File("scoutingData.txt"));
+            scan.useDelimiter(",|\\R");
             ArrayList<String> names = new ArrayList<>();
-            while(scan.hasNextLine()){
-                names.add(scan.nextLine());
+            while(scan.hasNext()){
+                names.add(scan.next());
             }
+            
+            System.out.println(names.get(0));
             System.out.println("I read in " + names.size() + " names:");
             for (String s : names) {
                 System.out.println("\t" + s);

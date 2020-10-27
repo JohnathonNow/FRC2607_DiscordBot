@@ -10,8 +10,6 @@ import util.Message;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("x");
         Handler[] handlers = new Handler[] {
             new MatchPredictor(),
             new ImageManipulator()
