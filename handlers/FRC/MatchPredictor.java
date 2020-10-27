@@ -13,7 +13,7 @@ public class MatchPredictor implements Handler {
     @Override
     public void handleMessage(Message m) {
         if (m.getText().startsWith("!testdefense")) {
-            System.out.println("2607 played defense? " + this.data.isPlayingDefense(2607));
+            m.reply("2607 played defense? " + this.data.isPlayingDefense(2607));
         }
     }
 
