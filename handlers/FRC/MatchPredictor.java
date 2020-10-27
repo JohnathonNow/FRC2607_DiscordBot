@@ -18,7 +18,13 @@ public class MatchPredictor implements Handler {
         }
 
         if (m.getText().startsWith("!match")) {
-            
+            Scanner scanner = new Scanner(m.getText());
+            scanner.next();
+            int[] blue = new int[]{scanner.nextInt(),scanner.nextInt(),scanner.nextInt()};
+            int[] red = new int[]{scanner.nextInt(),scanner.nextInt(),scanner.nextInt()};
+            Match match = new Match(blue, red);     
+            Prediction p = this.simulateMany(match);
+            m.reply("Blue wins: " + p.getBlue_wins() +" " + "Red wins: " + p.getRed_wins() + " " + "Ties: " + p.getTies());
         }
     }
 
