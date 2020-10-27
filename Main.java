@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import handlers.Handler;
 import handlers.FRC.MatchPredictor;
+import handlers.FRC.ScoutingData;
 import handlers.Image.ImageManipulator;
 import transport.Console;
 import transport.Transport;
