@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 import handlers.Handler;
 import handlers.FRC.MatchPredictor;
+import handlers.FRC.ScoutingData;
 import handlers.Image.ImageManipulator;
 import transport.Console;
 import transport.Transport;
@@ -9,6 +10,8 @@ import util.Message;
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("x");
         Handler[] handlers = new Handler[] {
             new MatchPredictor(),
             new ImageManipulator()
