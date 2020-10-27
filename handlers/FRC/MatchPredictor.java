@@ -2,6 +2,7 @@ package handlers.FRC;
 
 import handlers.Handler;
 import util.Message;
+import java.util.Scanner;
 
 public class MatchPredictor implements Handler {
     private ScoutingData data;
