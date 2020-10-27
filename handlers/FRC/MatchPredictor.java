@@ -3,6 +3,7 @@ package handlers.FRC;
 import handlers.Handler;
 import util.Message;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class MatchPredictor implements Handler {
     private ScoutingData data;
@@ -14,6 +15,10 @@ public class MatchPredictor implements Handler {
     public void handleMessage(Message m) {
         if (m.getText().startsWith("!testdefense")) {
             m.reply("2607 played defense? " + this.data.isPlayingDefense(2607));
+        }
+
+        if (m.getText().startsWith("!match")) {
+            
         }
     }
 

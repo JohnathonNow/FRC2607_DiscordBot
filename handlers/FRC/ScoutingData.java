@@ -12,23 +12,21 @@ public class ScoutingData {
     private static Random r = new Random();
     private Scanner scan;
     public ScoutingData() {
+        this.data = new HashMap<>();
         try{
-            scan = new Scanner(new File("scoutingData.txt"));
-            scan.useDelimiter(",|\\R");
-            ArrayList<String> names = new ArrayList<>();
+            scan = new Scanner(new File("teamNumbers.txt"));
+            ArrayList<Integer> team = new ArrayList<>();
             while(scan.hasNext()){
-                names.add(scan.next());
+                team.add(scan.nextInt());
             }
-            
-            System.out.println(names.get(0));
-            System.out.println("I read in " + names.size() + " names:");
-            for (String s : names) {
+            for (int s : team) {
                 System.out.println("\t" + s);
+                this.data.put(s, new TeamData(s));
             }
         } catch(FileNotFoundException e){
             e.printStackTrace();
         }
-        this.data = new HashMap<>();
+        
         this.data.put(2607, new TeamData(2607));
         // TODO: Read in data
     }
